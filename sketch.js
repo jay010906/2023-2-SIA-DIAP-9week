@@ -1,14 +1,18 @@
 let particles = [];
-let particleSystem;
+
+function mousePressed() {
+ particles.push(new ParticleSystem(mouseX, mouseY));
+}
 
 function setup() {
   createCanvas(1000, 700);
-  particleSystem = new ParticleSystem(width/2, height/2);
 }
 
 function draw() {
   background(250);
-  particleSystem.run(10);
-  particleSystem.update();
-  particleSystem.show();
+  for (let particle of particles) {
+     particle.run(2);
+    particle.show();
+    particle.update();
+  }
 }

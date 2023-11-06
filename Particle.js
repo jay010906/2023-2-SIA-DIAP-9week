@@ -16,7 +16,7 @@ class Particle {
     this.acc.add(force);
   }
 
-  checkEdges() {
+  edges() {
     if (this.pos.y >= height - this.r) {
       this.pos.y = height - this.r;
       this.vel.y *= -1;
@@ -36,7 +36,7 @@ class Particle {
     this.pos.add(this.vel);
     this.acc.set(0, 0);
 
-    this.lifespan -= 1;
+    this.lifespan -= 5;
   }
 
   show() {
