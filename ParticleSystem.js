@@ -10,10 +10,14 @@ class ParticleSystem {
       }
     }
   
+    applyForce(force) {
+        for (let particle of this.particles) {
+            particle.applyForce(force);
+     
+          }
+    }
     update() {
       for (let particle of this.particles) {
-        let gravity = createVector(0, 0.4);
-        particle.applyForce(gravity);
         particle.update();
       }
   
