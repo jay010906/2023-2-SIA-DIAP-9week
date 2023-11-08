@@ -5,7 +5,7 @@ class Candle {
     this.h = 300;
   }
 
-  show() {
+  showCandleBody() {
     // candle Body
     push();
     noStroke();
@@ -19,10 +19,12 @@ class Candle {
     noStroke();
     fill(235);
     for (let i = 100; i < width; i += 200) {
-      rect(i - 45, this.y, this.w-90, this.h);
+      rect(i - 45, this.y, this.w - 90, this.h);
     }
     pop();
-    // candle head
+  }
+
+  showCandleHead() {
     push();
     noStroke();
     fill(240);
@@ -30,12 +32,16 @@ class Candle {
       ellipse(i, this.y, this.w, this.h - 260);
     }
     pop();
-    // candle wick
+  }
+
+  showCandleWick() {
     push();
-    strokeWeight(3);
-     for(let i = 100; i < width; i+=200) {
-    line(i, this.y - 30, i, this.y);
-     }
+    noStroke();
+    rectMode(CENTER);
+    fill(140);
+    for (let i = 100; i < width; i += 200) {
+    rect(i, this.y-20, this.w - 95, this.h-260, 70);
+    }
     pop();
   }
 }

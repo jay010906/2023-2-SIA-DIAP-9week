@@ -1,5 +1,5 @@
 let particles = [];
-let candles;
+let candle;
 
 function mousePressed() {
  particles.push(new ParticleSystem(mouseX, mouseY));
@@ -10,10 +10,12 @@ function setup() {
 }
 
 function draw() {
-  background(250);
+  background(40);
 
-  // let candle = new Candle();
-  // candle.show();
+  let candle = new Candle();
+  candle.showCandleBody();
+  candle.showCandleHead();
+  candle.showCandleWick();
 
   let dir = map(mouseX, 0, width, -0.1, 0.1);
   let force = createVector(0, -0.1);
@@ -26,8 +28,6 @@ function draw() {
     particle.show();
     particle.update();
   }
-  let candle = new Candle();
-  candle.show();
 }
 
 

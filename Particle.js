@@ -4,7 +4,7 @@ class Particle {
     this.vel = p5.Vector.random2D();
     this.vel.mult(random(0.5, 4));
     this.acc = createVector(0, 0);
-    this.r = 8;
+    this.r = 4;
     this.lifespan = 255;
   }
 
@@ -20,12 +20,12 @@ class Particle {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
     this.acc.set(0, 0);
-    this.lifespan -= 7;
+    this.lifespan -= 15;
   }
 
   show() {
     noStroke();
-    fill(1, this.lifespan);
+    fill(230, 180, this.lifespan);
     ellipse(this.pos.x, this.pos.y, this.r * 2);
   }
 }
