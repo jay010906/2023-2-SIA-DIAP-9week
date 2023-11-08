@@ -9,7 +9,7 @@ class Candle {
     // candle Body
     push();
     noStroke();
-    fill(230);
+    fill(235);
     for (let i = 100; i < width; i += 200) {
       rect(i - 50, this.y, this.w, this.h);
     }
@@ -17,7 +17,7 @@ class Candle {
     // candle highlight
     push();
     noStroke();
-    fill(235);
+    fill(245);
     for (let i = 100; i < width; i += 200) {
       rect(i - 45, this.y, this.w - 90, this.h);
     }

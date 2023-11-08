@@ -24,7 +24,7 @@ function draw() {
   for (let particle of particles) {
     particle.applyForce(force);
     particle.applyForce(wind);
-    particle.run(5);
+    particle.run(10);
     particle.show();
     particle.update();
   }
